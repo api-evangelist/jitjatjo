@@ -1,0 +1,26 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  Searched for a Jitjatjo pricing/plans page. https://www.jitjatjo.com/pricing
+  could not be reached (TLS handshake failure at the Webflow edge, no HTTP
+  response); the archived 2026-06-08 capture of the site navigation
+  (web.archive.org/web/20260608170945/https://www.jitjatjo.com/) exposes no
+  pricing route at all — the only conversion paths are /contact and the app
+  sign-in. https://help.jitjatjo.com/en/ (HTTP 200) documents onboarding but no
+  rates.
+plan_count: 0
+plans: []
+note: >-
+  Jitjatjo publishes no pricing. This is not a probe gap: the company sells W2
+  on-demand staffing priced per shift/market through a sales conversation, and
+  its own site navigation carries no pricing page to find. There is likewise no
+  API to price, since no public developer program exists. Recorded as an explicit
+  zero rather than omitted, so the absence is countable.
+pricing_model: contact-sales
+evidence:
+- url: https://www.jitjatjo.com/pricing
+  status: 0
+  note: TLS handshake failure (alert 40) at the Webflow edge — no HTTP response
+- url: https://help.jitjatjo.com/en/
+  status: 200
+  note: help center reachable; contains onboarding articles, no rates or plans

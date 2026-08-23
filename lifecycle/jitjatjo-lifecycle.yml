@@ -1,0 +1,81 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://www.dayforce.com/who-we-are/newsroom/dayforce-flex-work-expands-frontline-contingent-workforce-platform
+  (Dayforce newsroom, 2025-09-08); https://help.jitjatjo.com/en/ (HTTP 200, page
+  titles itself "Dayforce Flex Work | Help Center");
+  https://apps.apple.com/us/app/dayforce-flex-work/id1130631573 (HTTP 200, the
+  Jitjatjo consumer app renamed in place);
+  https://play.google.com/store/apps/details?id=com.jitjatjo.android.consumer
+  (HTTP 200, Android package id still com.jitjatjo.*)
+note: >-
+  There is no API lifecycle to record here because there is no published API —
+  no versioning policy, no deprecation policy, no Sunset/Deprecation header
+  documentation (RFC 8594), no SLA and no status page were found on any host the
+  company controls. What this artifact records instead is the PRODUCT lifecycle,
+  which is the live fact about this provider: the Jitjatjo brand is being retired
+  into Dayforce Flex Work following the acquisition.
+api_versioning:
+  documented: false
+  scheme: null
+  note: No public API, therefore no published versioning scheme.
+deprecation_policy:
+  documented: false
+  sunset_header: false
+  note: >-
+    No deprecation policy published. NO Deprecation POINTER IS EMITTED for this
+    provider — the brand transition below is a product rename, not a published
+    API deprecation policy, and conflating the two would credit a policy that
+    does not exist.
+sla:
+  published: false
+status_page:
+  published: false
+  probed:
+  - url: https://status.jitjatjo.com/
+    status: 0
+    note: does not resolve
+  note: >-
+    No status page found. NO StatusPage POINTER IS EMITTED.
+product_lifecycle:
+  state: absorbed-into-acquirer
+  events:
+  - date: '2016-09-08'
+    event: >-
+      Jitjatjo founded in New York City; GitHub organization github.com/Jitjatjo
+      created the same month.
+    evidence: https://api.github.com/users/Jitjatjo (created_at 2016-09-08)
+  - date: '2025-09-08'
+    event: >-
+      Dayforce announces its acquisition of JJJ International — operator of both
+      the Jitjatjo on-demand W2 staffing brand and the "Network" frontline vendor
+      management system — and folds them into Dayforce Flex Work.
+    evidence: >-
+      https://www.dayforce.com/who-we-are/newsroom/dayforce-flex-work-expands-frontline-contingent-workforce-platform
+  - date: '2026-08-23'
+    event: >-
+      Observed state at enrichment. The help center at help.jitjatjo.com serves
+      under the title "Dayforce Flex Work | Help Center"; the ondemand.jitjatjo.com
+      web app calls API hosts on dayforceflexwork.com
+      (ondemandapi.dayforceflexwork.com, loginapi.dayforceflexwork.com); the
+      mobile apps are listed as "Dayforce Flex Work" while keeping the
+      com.jitjatjo.* package identifiers; and the canonical marketing site
+      www.jitjatjo.com no longer completes a TLS handshake.
+    evidence: probed 2026-08-23 — see security/jitjatjo-domain-security.yml
+  related_brands:
+  - name: Network
+    domain: networkplatform.com
+    note: >-
+      Sibling VMS brand under the same operator (JJJ International), integrated
+      with SAP Fieldglass. www.networkplatform.com returns 404 from the same
+      Webflow edge; networkplatform.com returns 403.
+  - name: Ideal / Ideal Flex Work
+    domain: ideal.com
+    note: >-
+      A further brand on the same platform — the Jitjatjo footer links its
+      privacy policy to terms.ideal.com, the help center mirror at
+      get.jitjatjo.help titles itself "Ideal Flex Work | Help Center", and
+      jobs.ideal.com serves the identical job board as jobs.jitjatjo.com.
+  - name: Dayforce Flex Work
+    domain: dayforceflexwork.com
+    note: The current, post-acquisition brand and the domain carrying the live API hosts.

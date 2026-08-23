@@ -1,0 +1,187 @@
+generated: '2026-08-23'
+method: probed
+source: >-
+  Direct HTTP probes of every host Jitjatjo controls, 2026-08-23. Hosts were
+  enumerated from Certificate Transparency (api.certspotter.com, domains
+  jitjatjo.com / jjj.work / networkplatform.com) and from the API base URLs
+  found inside the production ondemand.jitjatjo.com JavaScript bundle.
+note: >-
+  NO POINTER IS EMITTED for this artifact. Not one /.well-known/ path on any
+  Jitjatjo-controlled host returned a document belonging to Jitjatjo. The single
+  200 recorded below is Intercom's own vendor security.txt, served by the hosted
+  help center and canonicalised to app.intercom.com — it is not this provider's
+  disclosure surface and must not be credited as one. The two SPA hosts answer
+  200 with an HTML shell for EVERY path including nonsense ones, which is the
+  dominant false positive on this probe; those are recorded as misses.
+hosts:
+- host: ondemandapi.dayforceflexwork.com
+  note: >-
+    The real production API host for the "Ondemand by Jitjatjo" web app, read
+    from the app's own JavaScript bundle. Different domain from the provider
+    because JJJ International (Jitjatjo) was acquired by Dayforce in September
+    2025 and the platform is being rebranded Dayforce Flex Work. This host
+    returns honest JSON 404s, so these are true negatives, not shell responses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: loginapi.dayforceflexwork.com
+  note: Authentication API host for the same platform. Empty-bodied 404s throughout.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: help.jitjatjo.com
+  note: >-
+    Intercom-hosted help center on a Jitjatjo custom domain. Serves the only 200
+    on any /.well-known/ path across the estate, and it is Intercom's document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: >-
+      200 but NOT a real doc for this provider — the body is Intercom's vendor
+      security.txt (Contact bugcrowd.com/intercom, Canonical
+      https://app.intercom.com/.well-known/security.txt). It documents Intercom's
+      disclosure program, not Jitjatjo's. Deliberately saved with no file: and
+      excluded from credit.
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: ondemand.jitjatjo.com
+  note: >-
+    Single-page app on CloudFront. Answers 200 with a 1.9KB HTML shell for every
+    path probed, including /openapi.json and every /.well-known/ path. All 200s
+    here are soft 404s, not documents.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/api-catalog
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/agent.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+- host: flex.jitjatjo.com
+  note: >-
+    Talent-facing single-page app on CloudFront. Same catch-all behaviour as
+    ondemand — 200 with a 1.2KB HTML shell for every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/api-catalog
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+  - path: /.well-known/agent.json
+    status: 200
+    note: 200 html spa shell — not a real doc, catch-all response
+- host: jobs.jitjatjo.com
+  note: Public shift/job marketplace. Real 404s.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: terms.jitjatjo.com
+  note: >-
+    S3-backed static bucket holding the legal documents. Returns AccessDenied
+    (403) for anything not an explicitly published object, so these are true
+    negatives.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: www.jitjatjo.com
+  note: >-
+    The canonical marketing site, hosted on Webflow. NOT PROBEABLE on 2026-08-23:
+    the Webflow edge (proxy-ssl.webflow.com) aborts the TLS handshake with alert
+    40 (handshake_failure) on every one of its three IPs and at every TLS
+    version, so no HTTP request can be made at all. The apex jitjatjo.com 301s
+    here, so the whole marketing surface is unreachable over HTTPS. The Internet
+    Archive's last successful capture is 2026-06-08, which brackets when this
+    broke. Recorded as a probe failure, not as an absence.
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    note: TLS handshake failure (alert 40) at the Webflow edge — no HTTP response
+  - path: /.well-known/api-catalog
+    status: 0
+    note: TLS handshake failure (alert 40) at the Webflow edge — no HTTP response
+  - path: /.well-known/agent-card.json
+    status: 0
+    note: TLS handshake failure (alert 40) at the Webflow edge — no HTTP response

@@ -1,0 +1,27 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  Searched every Jitjatjo-controlled surface for published API rate limits:
+  the help center (https://help.jitjatjo.com/en/, HTTP 200), its llms.txt
+  (https://help.jitjatjo.com/llms.txt, HTTP 200), and the production API host
+  (https://ondemandapi.dayforceflexwork.com/, which returns
+  {"error":"Resource not found."} for /docs, /api-docs, /openapi.json and every
+  other reference path).
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are published because no public API is published — there is no
+  developer portal, API reference or machine-readable contract on any host the
+  company controls. The production API host exists and is healthy, but it serves
+  the company's own web and mobile apps and documents nothing publicly, so no
+  runtime rate-limit signal (X-RateLimit-*, RateLimit-*, Retry-After) could be
+  observed or read. Recorded as an explicit zero rather than omitted.
+evidence:
+- url: https://ondemandapi.dayforceflexwork.com/docs
+  status: 404
+- url: https://ondemandapi.dayforceflexwork.com/openapi.json
+  status: 404
+- url: https://help.jitjatjo.com/llms.txt
+  status: 200
+  note: real llms.txt, but it indexes two help-center onboarding articles only

@@ -64,5 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Jitjatjo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Jitjatjo is a New York City based on-demand staffing and workforce management platform
+operated by JJJ International, matching hospitality, healthcare, education, facilities,
+retail and logistics businesses with W2 temporary talent in real time. It runs two
+consumer-facing products — **Ondemand by Jitjatjo** for businesses booking shifts and
+**Flex by Jitjatjo** for talent picking up gigs — alongside **Network**, a frontline
+vendor management system (VMS) for contingent labor that is integrated with SAP
+Fieldglass.
+
+JJJ International was acquired by **Dayforce** in September 2025 and the platform is
+being rebranded as **Dayforce Flex Work**. As of 2026-08-23 the Jitjatjo web apps call
+API hosts on `dayforceflexwork.com`, the help center titles itself "Dayforce Flex Work",
+and the canonical marketing site `www.jitjatjo.com` no longer completes a TLS handshake.
+
+**No public API.** Contract discovery was run against every host the company controls —
+enumerated from Certificate Transparency and from the production JavaScript bundle — and
+found no OpenAPI, Swagger, GraphQL SDL, AsyncAPI, MCP server, agent card, SDK, webhook
+catalog, developer portal or API reference. The production API host
+(`ondemandapi.dayforceflexwork.com`) is healthy and returns honest JSON 404s for every
+specification path; it serves the company's own apps and documents nothing publicly.
+
+- Website: https://www.jitjatjo.com/ (HTTPS handshake failing as of 2026-08-23)
+- Help center: https://help.jitjatjo.com/en/
+- Job board: https://jobs.jitjatjo.com/
+- Legal: https://terms.jitjatjo.com/terms/terms-client.html
+- GitHub: https://github.com/Jitjatjo-Technology

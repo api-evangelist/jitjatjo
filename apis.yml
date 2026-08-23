@@ -1,17 +1,35 @@
 aid: jitjatjo
 name: Jitjatjo
-description: 'Jitjatjo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Jitjatjo is a New York City based on-demand staffing and workforce management platform
+  operated by JJJ International, matching hospitality, healthcare, education, facilities,
+  retail and logistics businesses with W2 temporary talent in real time. The company runs
+  two consumer-facing products — "Ondemand by Jitjatjo" for businesses booking shifts and
+  "Flex by Jitjatjo" for talent picking up gigs — alongside "Network", a frontline vendor
+  management system (VMS) for contingent labor that is integrated with SAP Fieldglass.
+  JJJ International was acquired by Dayforce in September 2025 and the platform is being
+  rebranded as Dayforce Flex Work; the Jitjatjo web apps now call API hosts on
+  dayforceflexwork.com. Jitjatjo publishes no public developer program: no developer
+  portal, API reference, OpenAPI/GraphQL contract, SDK or webhook catalog was found on any
+  host the company controls.
+image: https://cdn.prod.website-files.com/5feb460b9cc80b0a7898c766/5fecd7cdcfa4cb6f9cf69609_jitjatjo_webclip.png
 url: https://raw.githubusercontent.com/api-evangelist/jitjatjo/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Staffing
+- Human Resources
+- Workforce Management
+- Talent Marketplace
+- Gig Economy
+- Contingent Labor
+- Vendor Management
+- Hospitality
+- Healthcare Staffing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +38,53 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.jitjatjo.com/
+- type: Support
+  url: https://help.jitjatjo.com/en/
+- type: TermsOfService
+  url: https://terms.jitjatjo.com/terms/terms-client.html
+- type: PrivacyPolicy
+  url: https://terms.jitjatjo.com/terms/privacy.html
+- type: SignUp
+  url: https://ondemand.jitjatjo.com/signin
+- type: GitHubOrganization
+  url: https://github.com/Jitjatjo-Technology
+- type: LLMsTxt
+  url: llms/jitjatjo-llms.txt
+- type: DomainSecurity
+  url: security/jitjatjo-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/jitjatjo-lifecycle.yml
+- type: Plans
+  url: plans/jitjatjo-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/jitjatjo-rate-limits.yml
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Jitjatjo ships software only as an end-user product — the Ondemand, Flex and
+    Network apps — and publishes no developer surface of any kind: the production
+    API host read out of its own JavaScript bundle,
+    ondemandapi.dayforceflexwork.com, returns {"error":"Resource not found."} for
+    /openapi.json, /swagger.json, /graphql, /api-docs, /docs and /redoc alike, and
+    no developer portal, API reference, SDK or webhook catalog exists on any of the
+    hosts enumerated from Certificate Transparency for jitjatjo.com, jjj.work or
+    networkplatform.com.
+  evidence:
+  - url: https://ondemandapi.dayforceflexwork.com/openapi.json
+    status: 404
+  - url: https://ondemandapi.dayforceflexwork.com/api-docs
+    status: 404
+  - url: https://ondemandapi.dayforceflexwork.com/graphql
+    status: 404
+  - url: https://help.jitjatjo.com/llms.txt
+    status: 200
+  - url: https://www.jitjatjo.com/
+    status: 0
+  checked: '2026-08-23'
