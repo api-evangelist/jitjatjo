@@ -12,6 +12,17 @@ description: >-
   dayforceflexwork.com. Jitjatjo publishes no public developer program: no developer
   portal, API reference, OpenAPI/GraphQL contract, SDK or webhook catalog was found on any
   host the company controls.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/5feb460b9cc80b0a7898c766/5fecd7cdcfa4cb6f9cf69609_jitjatjo_webclip.png
 url: https://raw.githubusercontent.com/api-evangelist/jitjatjo/refs/heads/main/apis.yml
 x-type: company
